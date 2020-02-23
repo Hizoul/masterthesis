@@ -11,7 +11,7 @@ This repository contains the code used to produce the results of the experiments
 Below is an unordered table of experiments and their code.
 
 |  Experiment | Code  |
-|---|---|---|
+|---|---|
 | Branching Factor (3.2) | `src/plot/possible_plays/mod.rs`  |
 | First Player Advantage (3.3) | `src/game_player/advantage_checker.rs` |
 | Transposition Table Benchmark (4.1.5) | `benches/game_logic/transposition.rs` |
