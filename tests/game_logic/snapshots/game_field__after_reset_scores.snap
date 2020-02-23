@@ -1,0 +1,10 @@
+---
+created: "2019-09-18T11:15:47.055332877Z"
+creator: insta@0.8.1
+source: tests/game_logic/game_field.rs
+expression: g.scores
+---
+[
+    0,
+    0,
+]

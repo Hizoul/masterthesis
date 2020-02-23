@@ -1,0 +1,10 @@
+---
+created: "2019-09-18T11:15:47.158249102Z"
+creator: insta@0.8.1
+source: tests/heuristics/mod.rs
+expression: "(heuristic_value_height_territory(&field2, 0),\n heuristic_value_height_territory(&field2, 1))"
+---
+(
+    0.05,
+    0.8,
+)

@@ -1,0 +1,10 @@
+---
+created: "2019-09-30T08:31:04.909428663Z"
+creator: insta@0.8.1
+source: tests/heuristics/mod.rs
+expression: field.scores
+---
+[
+    23,
+    20,
+]

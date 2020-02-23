@@ -1,0 +1,7 @@
+---
+created: "2019-09-30T08:26:06.313354751Z"
+creator: insta@0.8.1
+source: tests/game_logic/score.rs
+expression: "field.calculate_full_reward(0, false).to_string().as_str()"
+---
+-0.35600000000000004

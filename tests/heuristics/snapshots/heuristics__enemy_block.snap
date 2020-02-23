@@ -1,0 +1,10 @@
+---
+created: "2019-09-18T11:15:46.890734292Z"
+creator: insta@0.8.1
+source: tests/heuristics/mod.rs
+expression: "(heuristic_value_enemy_block(&field, 0),\n heuristic_value_enemy_block(&field, 1))"
+---
+(
+    0.08,
+    0.05,
+)

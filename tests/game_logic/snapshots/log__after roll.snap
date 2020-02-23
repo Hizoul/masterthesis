@@ -1,0 +1,16 @@
+---
+created: "2019-09-18T11:15:46.418682540Z"
+creator: insta@0.8.1
+source: tests/game_logic/log.rs
+expression: "&g"
+---
+{
+  "log": [
+    {
+      "PayloadRolled": {
+        "from": 0,
+        "block": 2
+      }
+    }
+  ]
+}

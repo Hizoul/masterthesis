@@ -1,0 +1,10 @@
+---
+created: "2019-09-18T11:15:46.844264235Z"
+creator: insta@0.8.1
+source: tests/heuristics/mod.rs
+expression: "(heuristic_value_all_territory(&field, 0),\n heuristic_value_all_territory(&field, 1))"
+---
+(
+    11.049999999999999,
+    2.04,
+)

@@ -1,0 +1,10 @@
+---
+source: tests/hex/mod.rs
+expression: "&game.to_string()"
+---
+00000
+ 00000
+  00000
+   00000
+    00000
+

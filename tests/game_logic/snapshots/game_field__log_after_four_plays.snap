@@ -1,0 +1,7 @@
+---
+created: "2019-09-18T11:15:46.641686617Z"
+creator: insta@0.8.1
+source: tests/game_logic/game_field.rs
+expression: "serde_json::to_string(&g.log).unwrap()"
+---
+{"log":[{"PayloadPlaced":{"x":0,"y":0,"block":1,"orientation":0,"from":1}},{"PayloadRolled":{"from":0,"block":3}},{"PayloadConsidering":{"play_index":0}},{"PayloadPlaced":{"x":0,"y":2,"block":3,"orientation":0,"from":0}},{"PayloadRolled":{"from":1,"block":0}},{"PayloadConsidering":{"play_index":0}},{"PayloadPlaced":{"x":0,"y":4,"block":0,"orientation":0,"from":1}},{"PayloadRolled":{"from":0,"block":1}},{"PayloadConsidering":{"play_index":0}},{"PayloadPlaced":{"x":0,"y":5,"block":1,"orientation":0,"from":0}},{"PayloadRolled":{"from":1,"block":2}},{"PayloadConsidering":{"play_index":0}}]}

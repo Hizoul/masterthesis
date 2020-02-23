@@ -1,0 +1,24 @@
+---
+created: "2019-09-18T11:15:46.704636366Z"
+creator: insta@0.8.1
+source: tests/game_logic/game_field.rs
+expression: scores
+---
+[
+    [
+        0,
+        0,
+    ],
+    [
+        -3,
+        0,
+    ],
+    [
+        -3,
+        -5,
+    ],
+    [
+        -3,
+        -5,
+    ],
+]

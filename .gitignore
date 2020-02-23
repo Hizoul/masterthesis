@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+*.txt
+*.pdf
+*.pkl
+.vscode
+*.png
+*.json
+*.db

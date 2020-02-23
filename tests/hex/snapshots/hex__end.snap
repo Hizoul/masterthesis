@@ -1,0 +1,10 @@
+---
+source: tests/hex/mod.rs
+expression: "&game.to_string()"
+---
+12222
+ 10000
+  10200
+   10000
+    10000
+

@@ -1,0 +1,36 @@
+---
+created: "2019-09-18T11:15:46.585308485Z"
+creator: insta@0.8.1
+source: tests/game_logic/log.rs
+expression: "&g"
+---
+{
+  "log": [
+    {
+      "PayloadRolled": {
+        "from": 0,
+        "block": 2
+      }
+    },
+    {
+      "PayloadPlaced": {
+        "x": 3,
+        "y": 4,
+        "block": 1,
+        "orientation": 2,
+        "from": 0
+      }
+    },
+    {
+      "PayloadRolled": {
+        "from": 1,
+        "block": 5
+      }
+    },
+    {
+      "PayloadConsidering": {
+        "play_index": 0
+      }
+    }
+  ]
+}

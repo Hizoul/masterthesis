@@ -1,0 +1,10 @@
+---
+created: "2019-09-30T08:26:06.471317570Z"
+creator: insta@0.8.1
+source: tests/heuristics/mod.rs
+expression: "(field2.update_reward(0, false), field2.update_reward(1, false))"
+---
+(
+    0.0,
+    0.006,
+)

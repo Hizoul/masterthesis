@@ -1,0 +1,13 @@
+---
+created: "2019-09-18T11:15:46.678400699Z"
+creator: insta@0.8.1
+source: tests/game_logic/log.rs
+expression: "(from, x, y, block, orientation)"
+---
+[
+  0,
+  3,
+  4,
+  1,
+  2
+]
