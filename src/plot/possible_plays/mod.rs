@@ -94,10 +94,28 @@ fn get_candlestick_data(list: &Vec<Vec<i32>>) -> Vec<(i32, i32, i32, i32, i32)> 
 pub fn sample_plotter(file_names: &[&str]) {
   let mut line_data = Vec::new();
   let mut candle_data = Vec::new();
+  let mut total_turns = 0;
+  let mut total_possible = 0;
+  let mut total_entries = 0;
   for file_name in file_names {
     let list: Vec<Vec<i32>> = from_str(read_to_string(format!("{}{}",file_name,".json").as_str()).unwrap().as_ref()).unwrap();
     line_data.push((file_name.to_string(),get_avg_linedata(&list)));
-    candle_data.push((file_name.to_string(),get_candlestick_data(&list)))
+    candle_data.push((file_name.to_string(),get_candlestick_data(&list)));
+    let mut games_ended: Vec<i32> = Vec::new();
+    let mut previous_amount = list[0].len() as i32;
+    total_entries += previous_amount;
+    let mut total_ended = 0;
+    let line_data = get_avg_linedata(&list);
+    for i in 0..list.len() {
+      let current = list[i].len() as i32;
+      total_possible += line_data[i].1;
+      games_ended.push(previous_amount - current);
+      total_ended += previous_amount - current;
+      total_turns += (previous_amount - current) * (i as i32 + 1);
+      previous_amount = current;
+    }
+    println!("{} total turns:{} avg turns: {} total possible: {} avg possible: {} total ended: {} {:?}", file_name, total_turns, total_turns / total_entries, total_possible, total_possible / 150, total_ended, games_ended);
+
   }
   make_line_and_candle_chart!("graphs/turn_amounts_full.png", (640, 480), "Average amount of possible moves per turn".to_owned(),
     0..50, 0..162,
