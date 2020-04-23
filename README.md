@@ -11,7 +11,7 @@ This repository contains the code used to produce the results of the experiments
 Below is an unordered table of experiments and their code.
 
 |  Experiment | Code  |
-|---|---|---|
+|---|---|
 | Branching Factor (3.2) | `src/plot/possible_plays/mod.rs`  |
 | First Player Advantage (3.3) | `src/game_player/advantage_checker.rs` |
 | Transposition Table Benchmark (4.1.5) | `benches/game_logic/transposition.rs` |
@@ -21,7 +21,7 @@ Below is an unordered table of experiments and their code.
 | Observation Space (6.4) | `python-rl/searchparams.py` |
 | Reward Function Effectiveness (6.5) | `scripts/reprodocubilityDataProcessor.py` |
 | MCTS Effectiveness (6.6) | `src/game_player/mctsparameval.rs` |
-| RL Agents Training (6.7) | `src/game_player/selfplay.rs` |
+| RL Agents Training (6.7) | `python-rl/selfplay.rs` |
 | Tournament (6.8) | `src/game_player/tournament.rs` |
 | MCTS Verification (6.9) | `src/hex/hex_eval.rs` |
 | Untested and unused AlphaZero Rust pytorch implementation | `src/rl/aznet.rs` |
