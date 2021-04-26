@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Amount of possible plays and their achievable points",
+  "data": {"url": "data/algo_points.json"},
+  "mark": "bar",
+  "transform": [{
+    "calculate": "if(datum.type === 'Minus Two', 0, if(datum.type === 'Minus One', 1, if(datum.type === 'Neutral', 2,if(datum.type === 'Plus One', 3,if(datum.type === 'Plus Two', 4,if(datum.type === 'Plus Three', 5, 6))))))",
+    "as": "typeOrder"
+  }],
+  "width": {"step": 6},
+  "encoding": {
+    "column": {"field": "turn", "spacing": -1, "title": "Turn"},
+    "x": {"field": "symbol", "type": "ordinal", "axis": {"labelAngle": -75, "labelFontSize": 7}, "title": ""},
+    "y": {"field": "point", "aggregate": "sum", "title": "Possible Plays"},
+    "color": {
+      "title": "Points",
+      "field": "type",
+      "scale": {
+
+      "domain": ["Minus Two", "Minus One", "Neutral", "Plus One", "Plus Two", "Plus Three", "Plus More"],
+      "range": ["#b70e05", "#f22a1f", "#fcf944", "#71f2c9", "#0717f4", "#07f41b", "#000702"]
+      }
+    },
+    "order": {"field": "typeOrder"}
+  }
+}

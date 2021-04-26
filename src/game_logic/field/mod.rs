@@ -444,7 +444,8 @@ impl GameField {
       }
     }
     // MINUS POINTS
-    for part in self.shape_cache.get_block_shape(to_update_for).iter() {
+    let mut to_subtract = 0;
+    'SUB: for part in self.shape_cache.get_block_shape(to_update_for).iter() {
       let mut highest_y: i8 = 0;
       let mut found_part = false;
       for compare_part in self.positions.iter() {
@@ -454,15 +455,14 @@ impl GameField {
         }
       }
       if highest_y > 0 || !found_part {
-        let mut to_subtract = highest_y as i16 - part.y as i16;
-        if self.rules.limit_minus {
-          if to_subtract < -2 {
-            to_subtract = -2;
-          }
+        to_subtract += highest_y as i16 - part.y as i16;
+        if self.rules.limit_minus && to_subtract < -2 {
+          to_subtract = -2;
+          break 'SUB;
         }
-        self.scores[to_update_for.from as usize] += to_subtract;
       }
     }
+    self.scores[to_update_for.from as usize] += to_subtract;
   }
   pub fn restore_from_log(&mut self, log: &GameLog, restore_played_indices: bool) {
     self.log.copy_from(log);
@@ -483,7 +483,11 @@ impl GameField {
           self.tetrominos.push(t);
           self.decrease_piece_count(*from, *block);
           self.update_score_via_block(&t);
-        }
+          self.determine_next_player();
+        },
+        Payload::PayloadSkipped {from, block, reason} => {
+          self.determine_next_player();
+        },
         _ => {}
       }
     }
@@ -492,8 +496,6 @@ impl GameField {
       self.current_player = current_roll.0;
       self.current_block = current_roll.1;
       self.current_orientation = 0;
-    } else {
-      self.current_player = self.tetrominos.len() as i8 % self.players;
     }
     self.update_possible_plays();
     self.game_over = self.possible_plays.len() == 0;
